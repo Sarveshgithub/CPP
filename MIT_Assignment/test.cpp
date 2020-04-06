@@ -3,10 +3,13 @@
 #define o 1;
 using namespace std;
 
+void a(int *num){
+*num = *num*2;
+}
+
 int main()
 {
-    char s[] = "Hello,World!";
-    for(int i =0 ; i < sizeof(s);i++){
-        cout << s[i] << " ";
-    }
+    int n = 35;
+    a(&n);
+    cout<< n;
 }
