@@ -21,7 +21,7 @@ void swapByRef(int &a, int &b)
     a = b;
     b = temp;
 }
-void swap(int **ptr1, int **ptr2)
+void swap(int *(*ptr1), int *(*ptr2))
 {
     int *temp;
     temp = *ptr1;
