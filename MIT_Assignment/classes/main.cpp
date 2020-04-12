@@ -6,23 +6,29 @@ class Point
 public:
     double x, y;
 };
-
 class Vector
 {
 public:
     Point start, end;
 };
-
+void offsetVector(Vector &v, double offsetX, double offsetY)
+{
+    v.start.x += offsetX;
+    v.end.x += offsetX;
+    v.start.y += offsetY;
+    v.end.y += offsetY;
+}
+void printVector(Vector v)
+{
+    cout << "(" << v.start.x << "," << v.start.y << ") -> (" << v.end.x << "," << v.end.y << ")" << endl;
+}
 int main()
 {
-    Vector v1;
-    v1.start.x = 3.0;
-    v1.start.y = 4.0;
-    Vector v2;
-    v2.start = v1.start;
-    v2.start.x = 7.0;
-    cout << v1.start.x << " ";
-    cout << v1.start.y << endl;
-    cout << v2.start.x << " ";
-    cout << v2.start.y << endl;
+    Vector vec;
+    vec.start.x = 1.2;
+    vec.end.x = 2.0;
+    vec.start.y = 0.4;
+    vec.end.y = 1.6;
+    offsetVector(vec, 1.0, 1.5);
+    printVector(vec); // (2.2,1.9) -> (3.8,4.3)
 }
