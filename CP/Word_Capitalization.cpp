@@ -11,4 +11,5 @@ int main()
         s[0] = toupper(s[0]);
     }
     cout << s;
+    
 }
