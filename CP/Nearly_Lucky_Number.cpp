@@ -3,25 +3,21 @@
 using namespace std;
 int main()
 {
-    int n, l, rem;
-    cin >> n;
-    l = to_string(n).length();
-    bool isLucky = true;
-    for (int i = 0; i < l; i++)
+    long long x;
+    int s =0;
+    int rem; 
+    cin >> x;
+    while (x > 0)
     {
-        rem = n % 10;
-        if ((rem == 7 || rem == 4) && l == 1)
+        rem = x % 10;
+        if (rem == 4 || rem == 7)
         {
-            isLucky = false;
-            break;
+            ++s;
         }
-        if (rem != 4 && (rem != 7))
-        {
-            isLucky = false;
-            break;
-        }
-        n = n / 10;
+        x = x/10;
     }
-
-    cout << (isLucky ? "YES" : "NO");
+    if (s == 4 || s == 7)
+        cout << "YES";
+    else
+        cout << "NO";
 }
