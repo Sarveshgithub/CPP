@@ -7,11 +7,10 @@ using namespace std;
 #define f2(x, n) for (int x = 2; x <= n; ++x)
 int main()
 {
-    int n, p,t;
+    int n, p, t;
     cin >> n >> p;
     n++;
     bool isPrime;
-    bool isYes = true;
     while (n <= p)
     {
         isPrime = true;
@@ -23,16 +22,22 @@ int main()
                 break;
             }
         }
-        if (isPrime == true)
+        if (isPrime == true && n <= p)
         {
-            isYes = false;
             break;
         }
         n++;
     }
-    if(n == p){
-        isYes == true;
+    if (isPrime == true && n < p)
+    {
+        cout << "NO";
     }
-    cout << (isYes ? "NO" : "YES");
+    else if (isPrime == true && n == p)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
 }
-//
