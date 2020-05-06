@@ -5,18 +5,26 @@ using namespace std;
 #define f1(x, n) for (int x = 1; x <= n; ++x)
 int main()
 {
-    int s, q, element;
-    int **innerArray;
+    int s, q, element, row, col, **a;
     cin >> s >> q;
-    int *mainArray;
-    //mainArray = new int[element];
+    a = new int *[s];
+    int o[q];
     for (int i = 0; i < s; ++i)
     {
         cin >> element;
-        mainArray = new int[0][element];
+        a[i] = new int[element];
         for (int j = 0; j < element; j++)
         {
-
+            cin >> a[i][j];
         }
+    }
+    f(i, q)
+    {
+        cin >> row >> col;
+        o[i] = a[row][col];
+    }
+    f(i, q)
+    {
+        cout << o[i] << endl;
     }
 }
