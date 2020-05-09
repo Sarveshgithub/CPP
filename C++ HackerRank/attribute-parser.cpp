@@ -26,6 +26,7 @@ int main()
                 cout<<str.substr(0,3);
                 cout << "index::" <<i<<"str:::" << str.substr(count,i) << ed;
                 count = i+1;
+                cout<<"count::"<<count;
             }
         }
     }
