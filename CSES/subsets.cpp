@@ -22,11 +22,9 @@ void search(int k)
     }
     else
     {
-        // include k in the subset
         subset.push_back(k);
         search(k + 1);
         subset.pop_back();
-        // don’t include k in the subset
         search(k + 1);
     }
 }
