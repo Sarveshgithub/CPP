@@ -9,25 +9,30 @@ vector<int> permutation;
 vector<vector<int>> allsubSets;
 int n = 3;
 bool chosen[4];
+
 void search() {
-if (permutation.size() == n) {
-vector<int>::iterator it;
-        for (it = permutation.begin(); it != permutation.end(); ++it)
-        {
-            cout << *it << " ";
+    if (permutation.size() == n) {
+    vector<int>::iterator it;
+            for (it = permutation.begin(); it != permutation.end(); ++it)
+            {
+                cout << *it << " ";
+            }
+            cout << '\n';
+    } else {
+        for (int i = 1; i <= n; i++) {
+            if (chosen[i]) continue;
+            chosen[i] = true;
+            permutation.push_back(i);
+            cout<<"--before::"<<i<<"-array::"<<chosen[i]<<"-permutation-"<<permutation.size()<<'\n';
+            search();
+            cout<<"--here::"<<i<<"-array::"<<chosen[i]<<"-permutation-"<<permutation.size()<<'\n';
+            chosen[i] = false;
+            permutation.pop_back();
+            cout<<"--after::"<<i<<"-array::"<<chosen[i]<<"-permutation-"<<permutation.size()<<'\n';
         }
-        cout << '\n';
-} else {
-for (int i = 1; i <= n; i++) {
-if (chosen[i]) continue;
-chosen[i] = true;
-permutation.push_back(i);
-search();
-chosen[i] = false;
-permutation.pop_back();
+    }
 }
-}
-}
+
 int main()
 {
     search();
