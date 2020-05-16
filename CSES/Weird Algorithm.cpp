@@ -5,7 +5,7 @@ using namespace std;
 #define f1(x, n) for (int x = 1; x <= n; ++x)
 #define ed endl;
 int main(){
-    long long  n;
+    long long n;
     cin >> n;
     while(true){
         cout<<n<<" ";
