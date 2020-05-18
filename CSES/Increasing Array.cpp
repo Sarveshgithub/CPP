@@ -3,25 +3,18 @@
 using namespace std;
 
 int main(){
-    int n;
+    int n,a,b;
     long long turn=0;
-    int tmp;
-    vector<int> arr;
-    
     cin>>n;
-    
-    for(int i=0;i<n;i++){
-        cin>>tmp;
-        arr.push_back(tmp);
-    }
-    
+    cin>>a;
     for(int i=1;i<n;i++){
-        if(arr[i-1]>arr[i]){
-            tmp=arr[i-1]-arr[i];
-            turn+=tmp;
-            arr[i]=arr[i-1];
+        cin >> b;
+        if(a>b){
+            turn += a-b;
         }
-        //cout<<arr[i]<<" ";
+        else{
+            a = b;
+        }
     }
     cout<<turn<<"\n";
 
