@@ -6,25 +6,22 @@ using namespace std;
 #define ed endl;
 typedef long long ll;
 int main() {
-    // 14/2 = 7
-    // 7/2 = 2
-    // 2/2 = 1
-    // 4
-    // 3 5 6
     ll n, sum;
     cin >> n;
     sum = n * (n + 1) / 2;
-    cout << sum << '\n';
     if (sum % 2 == 0) {
+        sum /= 2;
         string s1, s2;
-        ll half = sum / 2;
-        ll c = 0;
-        while (half / 2 > 1) {
-            s1 = s1 + to_string(half / 2) + " ";
-            ++c;
-            half = half / 2;
+        ll c = 0;;
+        for (ll i = n; i >= 1; --i) {
+            if (i <= sum) {
+                s1 += to_string(i) + " ";
+                sum -= i;
+                ++c;
+            } else {
+                s2 += to_string(i) + " ";
+            }
         }
-        cout<<half;
         cout << "YES" << '\n';
         cout << c << '\n';
         cout << s1 << '\n';
