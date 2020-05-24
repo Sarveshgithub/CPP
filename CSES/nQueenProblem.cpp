@@ -6,38 +6,38 @@ typedef long long ll;
 #define f1(x, n) for (int x = 1; x <= n; ++x)
 #define ed endl;
 int n;
+int sol = 0;
 vector<int> position;
-
-bool isValidPlace(int row, int col) {
-    for (int i = 0; i < position.size(); i++) {
-        if (i == row) {
+bool isValidPlace() {
+    int rowId = position.size() - 1;
+    for (int i = 0; i < rowId; i++) {
+        int diff = abs(position[rowId] - position[i]);
+        if (diff == 0 || diff == rowId - i) {
             return false;
         }
-        if (position[i] == col) {
-            return false;
-        }
-        if (abs(i - row) == abs(position[i] - col)) {
-            return false;
-        }
-    }
-    if (position.size() == 1) {
-        return true;
     }
     return true;
 }
 void solveQueen() {
-    cout << "inside:::" << position.size() << '\n';
     if (n == position.size()) {
+        cout << "Solution " << ++sol << '\n';
         for (int i = 0; i < position.size(); i++) {
-            cout << position[i] << " ";
+            cout << "|";
+            for (int j = 0; j < position.size(); j++) {
+                if (position[i] == j) {
+                    cout << "Q";
+                } else {
+                    cout << "X";
+                }
+                cout << "|";
+            }
+            cout << "\n";
         }
         cout << "\n";
     } else {
         for (int i = 0; i < n; i++) {
-            // cout << "postion::::" << position.size() << "---i::::" << i << '\n';
             position.push_back(i);
-            if (isValidPlace(position.size(), i)) {
-                cout << "valid postion::::" << position.size() << "---i::::" << i << '\n';
+            if (isValidPlace()) {
                 solveQueen();
             }
             position.pop_back();
