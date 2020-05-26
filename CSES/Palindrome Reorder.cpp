@@ -8,23 +8,31 @@ typedef long long ll;
 int main() {
     string s;
     getline(cin, s);
-    int asci[26] = {};
     ll size = s.size();
     string f = "", e = "";
-    map<char,int> alpha;
-    char uniqe;
+    map<char, string> m;
     f(c, size) {
-        if (asci[90 - int(s[c])] >= 1) {
-            asci[90 - int(s[c])] += 1;
+        if (m.count(s[c])) {
+            m[s[c]] += s[c];
         } else {
-            uniqe = s[c];
-            asci[90 - int(s[c])] = 1;
-        }
-        if (asci[90 - int(s[c])] % 2 == 0) {
-            f = f + s[c];
-            e.insert(0, 1, s[c]);
+            m[s[c]] = s[c];
         }
     }
-    cout << f << uniqe << e << '\n';
-    cout << "unique::" << uniqe;
+    int c = 0;
+    string u = "";
+    for (auto i : m) {
+        if (i.second.size() % 2 == 1) {
+            ++c;
+            u = i.second;
+        }
+        if (c > 1) {
+            cout << "NO SOLUTION\n";
+            return 0;
+        }
+        if (i.second.size() % 2 == 0) {
+            f = f + i.second.substr(0, i.second.length() / 2);
+            e = i.second.substr(0, i.second.length() / 2) + e;
+        }
+    }
+    cout << f << u << e << '\n';
 }
