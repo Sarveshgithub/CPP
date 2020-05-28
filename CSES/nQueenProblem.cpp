@@ -45,6 +45,19 @@ void solveQueen() {
     }
 }
 int main() {
+    string s;
+    map<int,vector<int>> def;
+    for(int i =0 ;i <8;i++){
+        cin >> s;
+        for(int j =i ; j<8;j++){
+            if(s[0] == '*'){
+                def
+            }
+            else{
+                
+            }
+        }
+    }
     cin >> n;
     solveQueen();
 }
