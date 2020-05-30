@@ -59,5 +59,8 @@ int main() {
         }
     }
     cin >> n;
+
+
+    
     solveQueen();
 }
