@@ -5,9 +5,15 @@ typedef long long ll;
 #define f(x, n) for (int x = 0; x < n; ++x)
 #define f1(x, n) for (int x = 1; x <= n; ++x)
 #define ed endl;
+ll powll(ll e, ll p, ll mod) {
+    ll ans = 1;
+    for (ll i = 0; i < p; i++) {
+        ans = ans * e % mod;
+    }
+    return ans;
+}
 int main() {
-    ll n, r;
+    ll n;
     cin >> n;
-    r = pow(2, n);
-    cout << r;
+    cout << powll(2, n, 1e9 + 7);
 }
