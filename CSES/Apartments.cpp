@@ -6,15 +6,19 @@ typedef long long ll;
 #define f1(x, n) for (int x = 1; x <= n; ++x)
 #define ed endl;
 int n, m, k;
-bool search(int key, int a[]) {
-    int s,m,e;
-    f(i, m) {
-        cout << a[i] << " ";
+bool bs(int key, int a[]) {
+    cout << "key::" << key;
+    int s = 0, mid, e = m;
+    while (s <= e) {
+        mid = (s + e) / 2;
+        if (a[mid] == key)
+            return a[mid];
+        if (a[mid] < key)
+            s = mid + 1;
+        else
+            e = mid - 1;
     }
-    while(s!=e){
-        if()
-    }
-    return true;
+    return false;
 }
 int main() {
     cin >> n >> m >> k;
@@ -30,5 +34,11 @@ int main() {
         appartment[i] = apt;
     }
     sort(appartment, appartment + m);
-    search(2, appartment);
+    vector<int> result;
+    f(i, n) {
+        // cout << "dfdsfdsf::" << applicant[i];
+        // cout << "data::" << applicant[i] + k;
+        cout << "result:::1" << bs(applicant[i] + k, appartment);
+        cout << "result:::2" << bs(applicant[i] - k, appartment);
+    }
 }
