@@ -6,13 +6,18 @@ typedef long long ll;
 #define f1(x, n) for (int x = 1; x <= n; ++x)
 #define ed endl;
 int n, m, k;
+ll ans = 0;
 bool bs(int key, int a[]) {
-    cout << "key::" << key;
+    //cout << "key::" << key;
     int s = 0, mid, e = m;
     while (s <= e) {
         mid = (s + e) / 2;
-        if (a[mid] == key)
-            return a[mid];
+        if (a[mid] >= key - k && a[mid] <= key + k) {
+            ++ans;
+            break;
+            // cout << "here ::" << a[mid];
+            //return a[mid];
+        }
         if (a[mid] < key)
             s = mid + 1;
         else
@@ -38,7 +43,8 @@ int main() {
     f(i, n) {
         // cout << "dfdsfdsf::" << applicant[i];
         // cout << "data::" << applicant[i] + k;
-        cout << "result:::1" << bs(applicant[i] + k, appartment);
-        cout << "result:::2" << bs(applicant[i] - k, appartment);
+        // cout << "result:::1" <<
+        bs(applicant[i], appartment);
     }
+    cout << ans;
 }
