@@ -18,23 +18,19 @@ int main() {
     while ((size - 1) >= 0) {
         if (a[size] <= x) {
             int rem = x - a[size];
-            for (int i = 0; i < n; i++) {
-                if(a[i] <)
-                if (a[i - 1] + a[i] <= x) {
-                    c += 1;
-                } else {
-                    c += 2;
+            for (int i = 0; i < size - 1; i++) {
+                cout << ":::::" << a[i];
+                if (a[i] <= rem) {
+                    a.erase(a.begin() + i);
+                    break;
                 }
             }
         }
-        s--;
+        c += 1;
+        size--;
     }
     cout << c;
 }
 
 //9 8 8 9 10 8 5 8 7 10
 //5 7 8  9  10
-
-15
-
-    2 3 7 9 1
