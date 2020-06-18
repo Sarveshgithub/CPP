@@ -14,8 +14,8 @@ int main() {
     }
     sort(a.begin(), a.end());
     int c = 0, s = 0;
-    int size = a.size();
-    while ((size - 1) >= 0) {
+    int size = a.size() - 1;
+    while ((size) >= 0) {
         if (a[size] <= x) {
             int rem = x - a[size];
             for (int i = 0; i < size - 1; i++) {
@@ -26,8 +26,8 @@ int main() {
                 }
             }
         }
+        a.erase(a.begin() + size);
         c += 1;
-        size--;
     }
     cout << c;
 }
