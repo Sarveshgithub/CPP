@@ -6,5 +6,21 @@ typedef long long ll;
 #define f1(x, n) for (int x = 1; x <= n; ++x)
 #define ed endl;
 int main() {
-    
+    ll s;
+    cin >> s;
+    int a[s];
+    f(x, s) {
+        cin >> a[x];
+    }
+    ll start = 0, end = s - 1;
+    while (start < end) {
+        int temp = a[start];
+        a[start] = a[end];
+        a[end] = temp;
+        start++;
+        end--;
+    }
+    f(x, s) {
+        cout << a[x] << " ";
+    }
 }
