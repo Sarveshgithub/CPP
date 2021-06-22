@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 using namespace std;
-string PATH = "C:/Users/sarvesh.b.kumar/Desktop/C++ Program/CSES/";
+string PATH = "C:/Users/sarvesh.b.kumar/Desktop/C++ Program/";
 string TEMPLATE = "C:/Users/sarvesh.b.kumar/Desktop/C++ Program/template.cpp";
 
 string readFile() {
@@ -22,11 +22,14 @@ string readFile() {
 }
 
 void createFile() {
+    string directory;
+    cout << "Enter the directory i.e : cp\n";
+    getline(cin.ignore(), directory);
     string fileName;
     cout << "Please enter file name with extension i.e : test.cpp\n";
     getline(cin.ignore(), fileName);
     ofstream file;
-    file.open(PATH + fileName);
+    file.open(PATH + directory + "/" + fileName);
     file << readFile();
     file.close();
     cout << "DONE\n";
