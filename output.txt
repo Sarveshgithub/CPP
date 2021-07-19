@@ -1,1 +1,1 @@
-SOL ::c
+subString::aba

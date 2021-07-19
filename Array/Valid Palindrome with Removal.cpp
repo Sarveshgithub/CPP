@@ -15,9 +15,32 @@ int main() {
 	int i = 0, j = input.length() - 1, count = 0;
 	while (i < j) {
 		if (input[i] == input[j] ) {
-			validPalid = true;
+			//validPalid = true;
 			i++, j--;
 		}
-		else
+		else if (input[i + 1] == input[j] ) {
+			i = i + 2;
+			j--;
+			count ++;
+			//validPalid = true;
+		}
+		else if (input[i] == input[j - 1]) {
+			i++;
+			j = j - 2;
+			count ++;
+			//validPalid = true;
+		}
+		else {
+			validPalid = false;
+			break;
+		}
+
+		if (count > 1) {
+			validPalid = false;
+			break;
+		}
+		//cout << "val::" << i << j << count << input[i] << "---" << input[j] << ed;
+
 	}
+	cout << "valid:::" << validPalid;
 }
