@@ -1,2 +1,1 @@
-Peek Index:::1peekIndex::1leftElement::0
-2 1 
+sour , sweet , 
