@@ -23,11 +23,11 @@ string readFile() {
 
 void createFile() {
     string directory;
+    string fileName;
     cout << "Enter the directory i.e : cp\n";
     getline(cin.ignore(), directory);
-    string fileName;
     cout << "Please enter file name with extension i.e : test.cpp\n";
-    getline(cin.ignore(), fileName);
+    getline(cin, fileName);
     ofstream file;
     file.open(PATH + directory + "/" + fileName);
     file << readFile();
@@ -42,13 +42,13 @@ int main() {
         cout << "Press 0 for exit\n";
         cin >> choice;
         switch (choice) {
-            case 1:
-                createFile();
-                break;
-            case 0:
-                goto end;
-            default:
-                break;
+        case 1:
+            createFile();
+            break;
+        case 0:
+            goto end;
+        default:
+            break;
         }
     } while (1);
 end:
